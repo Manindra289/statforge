@@ -7,6 +7,9 @@ import { getUser } from "./_lib/actions";
 
 export const metadata = {
   title: "Home | StatForge",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default async function Page() {

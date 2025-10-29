@@ -12,6 +12,9 @@ import CombinedStat from "../_components/CombinedStat";
 
 export const metadata = {
   title: "Profile | StatForge",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 async function Page()

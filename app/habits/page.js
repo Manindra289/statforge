@@ -13,6 +13,9 @@ const GoodHabits = lazy(() => import("../_components/GoodHabits"));
 const BadHabits = lazy(() => import("../_components/BadHabits"));
 export const metadata = {
   title: "Habits | StatForge",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 

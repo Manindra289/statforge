@@ -53,10 +53,9 @@ function MobileNavBar() {
          </Link>
         </div>
 
-        <div className="absolute bottom-0 mb-5 ml-3">
+        <div className="absolute bottom-0 mb-5 pb-5 ml-3">
                 <SignOut/>
         </div>
-
 
         </section>
     </div>}

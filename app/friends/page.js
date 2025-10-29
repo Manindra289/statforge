@@ -6,6 +6,9 @@ import CombinedFriendSection from '../_components/CombinedFriendSection';
 
 export const metadata = {
   title: "Friends | StatForge",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 async function Page() {
    const session = await auth();
