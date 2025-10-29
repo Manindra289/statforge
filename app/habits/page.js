@@ -11,6 +11,10 @@ import Spinner from "../_components/Spinner";
 
 const GoodHabits = lazy(() => import("../_components/GoodHabits"));
 const BadHabits = lazy(() => import("../_components/BadHabits"));
+export const metadata = {
+  title: "Habits | StatForge",
+};
+
 
 async function page() {
   const session = await auth();

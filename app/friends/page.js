@@ -3,6 +3,10 @@ import NavBar from '../_components/NavBar'
 import { auth } from '../_lib/auth';
 import { getFriends, getUser } from '../_lib/actions';
 import CombinedFriendSection from '../_components/CombinedFriendSection';
+
+export const metadata = {
+  title: "Friends | StatForge",
+};
 async function Page() {
    const session = await auth();
     const {avatar,userId,userName} =  await getUser(session.user.email)

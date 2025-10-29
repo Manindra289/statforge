@@ -9,6 +9,11 @@ import ProfileStats from "../_components/ProfileStats";
 import UserName from "../_components/UserName";
 import CombinedStat from "../_components/CombinedStat";
 
+
+export const metadata = {
+  title: "Profile | StatForge",
+};
+
 async function Page()
 {
     const session = await auth();

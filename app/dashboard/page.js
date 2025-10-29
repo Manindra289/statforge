@@ -6,6 +6,13 @@ import TrackList from "../_components/TrackList"
 import { getUser } from "../_lib/actions";
 import { auth } from "../_lib/auth";
 
+export const metadata = {
+  title: "Dashboard | StatForge",
+  icons: {
+    icon: "/logo.png",
+  },
+};
+
 async function page() {
   const session = await auth();
   const user =  await getUser(session.user.email)
