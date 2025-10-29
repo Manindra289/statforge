@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,4 +24,43 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+*{
+  box-sizing: border-box;
 }
+/* body {
+  @apply bg-[url('./../public/bg_06.jpg')] bg-cover bg-center bg-no-repeat;
+
+} */
+ body{
+  @apply bg-gray-400;
+  /* @apply bg-[#fceeaa] */
+ }
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid white;
+    border-right-color: gray;
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid white;
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+} 
