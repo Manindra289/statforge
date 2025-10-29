@@ -5,6 +5,10 @@ import SignInButton from "./_components/SignInButton";
 import { auth } from "./_lib/auth";
 import { getUser } from "./_lib/actions";
 
+export const metadata = {
+  title: "Home | StatForge",
+};
+
 export default async function Page() {
   const session = await auth();
   // const user =  await getUser(session.user.email)
