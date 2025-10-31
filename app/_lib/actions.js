@@ -146,7 +146,7 @@ export async function addGoodHabitsToLogs(id)
       const temp = [];
       goodHabits.map((goodHabit)=>{ temp.push({date,userId:goodHabit.userId,habitId: goodHabit.habitId,completed:false}) })
       
-      const { data:newData , error:newError } = await supabase.from('goodHabitLogs').insert(temp).select(`id,habitId, goodHabits(habitName, category), completed `).eq("userId",id);
+      const { data:newData , error:newError } = await supabase.from('goodHabitLogs').insert(temp).select(`id,habitId, goodHabits(habitName, category, currentStreak), completed `).eq("userId",id);
       if(newError)
           throw new Error(newError)
 
@@ -210,9 +210,6 @@ export async function changeCompletion(id,value)
     const { data:userData, error:userError } = await supabase.from('users').select('*').eq('userId', userId).single();
     
     const categoryValue = userData[category];
-
-
-    
 
 
     let newStreak;
