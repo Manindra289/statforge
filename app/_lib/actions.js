@@ -150,8 +150,92 @@ export async function addGoodHabitsToLogs(id)
       
       // also check whether streak is being followed or not ?
       console.log("goodHabits****")
+      
+      const today = new Date().toISOString().split("T")[0];
+      // we need to change for each habit
+
+      goodHabits.map(
+        async (habit)=>{
+          // for each habit take the last completed
+          const lastCompleted = new Date(habit.lastCompleted);
+          const currentDate = new Date(today);
+          
+          // check the last completed with today
+          const diffDays = (currentDate - lastCompleted) / (1000 * 60 * 60 * 24);
+          // if it is greater than only we will update the streak, 
+          if (diffDays > 1) {
+          // Missed one or more days
+          
+          const habitId = habit.habitId;
+          newStreak = 1;
+          const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
+            .update({
+              "currentStreak": newStreak,
+              "lastCompleted": today,
+              "backupLastCompleted": lastCompleted,
+            })
+            .eq("habitId", habitId)
+            .eq("userId", id)
+            .select();
+
+          if(updatedErr)
+            console.error(updatedErr);
+        
+        }
+
+        }
+
+
+
+      );
+
+
+
+
+
+
+
+
+
       console.log(goodHabits)
       
+      // we get habitId, habitName, habitCategory, currentStreak, lastCompleted -- everything
+      // const lastCompleted = new Date(goodHabits.lastCompleted)
+      // const currentDate = new Date(today);
+      
+      
+      // newStreak = goodHabits.currentStreak;
+
+      // const diffDays = (currentDate - lastCompleted) / (1000 * 60 * 60 * 24);
+
+
+
+
+
+      // not doing task for more than 1 day. 
+      if (diffDays > 1) {
+        // Missed one or more days
+        const userId = goodHabits.userId;
+        const habitId = goodHabits.habitId;
+        newStreak = 1;
+        const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
+          .update({
+            "currentStreak": newStreak,
+            "lastCompleted": today,
+            "backupLastCompleted": lastCompleted,
+          })
+          .eq("habitId", habitId)
+          .eq("userId", userId)
+          .select();
+      }
+
+
+
+
+
+
+
+
       const temp = [];
 
 
