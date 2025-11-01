@@ -131,19 +131,31 @@ export async function getBadHabits(id)
 export async function addGoodHabitsToLogs(id)
 {
     const date = new Date().toISOString().split('T')[0];
+
     const {data, error} = await supabase.from("goodHabitLogs").select(`
         id,
         completed,
         habitId,
         goodHabits ( habitName, category, currentStreak )
         `).eq("date",date).eq("userId",id);
-      
+    
+    console.log("data **** ")
+    console.log(data)
+    
     if(data.length == 0)
     {
       // Insert new data
       // take data from Goodhabits and insert the data 
       const goodHabits = await getGoodHabits(id);
+      
+      // also check whether streak is being followed or not ?
+      console.log("goodHabits****")
+      console.log(goodHabits)
+      
       const temp = [];
+
+
+
       goodHabits.map((goodHabit)=>{ temp.push({date,userId:goodHabit.userId,habitId: goodHabit.habitId,completed:false}) })
       
       const { data:newData , error:newError } = await supabase.from('goodHabitLogs').insert(temp).select(`id,habitId, goodHabits(habitName, category, currentStreak), completed `).eq("userId",id);
