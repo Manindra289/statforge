@@ -208,26 +208,22 @@ export async function addGoodHabitsToLogs(id)
 
       // const diffDays = (currentDate - lastCompleted) / (1000 * 60 * 60 * 24);
 
-
-
-
-
       // not doing task for more than 1 day. 
-      if (diffDays > 1) {
-        // Missed one or more days
-        const userId = goodHabits.userId;
-        const habitId = goodHabits.habitId;
-        newStreak = 1;
-        const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
-          .update({
-            "currentStreak": newStreak,
-            "lastCompleted": today,
-            "backupLastCompleted": lastCompleted,
-          })
-          .eq("habitId", habitId)
-          .eq("userId", userId)
-          .select();
-      }
+      // if (diffDays > 1) {
+      //   // Missed one or more days
+      //   const userId = goodHabits.userId;
+      //   const habitId = goodHabits.habitId;
+      //   newStreak = 1;
+      //   const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
+      //     .update({
+      //       "currentStreak": newStreak,
+      //       "lastCompleted": today,
+      //       "backupLastCompleted": lastCompleted,
+      //     })
+      //     .eq("habitId", habitId)
+      //     .eq("userId", userId)
+      //     .select();
+      // }
 
 
 
