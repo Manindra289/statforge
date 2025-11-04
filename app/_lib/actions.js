@@ -153,8 +153,8 @@ export async function addGoodHabitsToLogs(id)
       
       const today = new Date().toISOString().split("T")[0];
       // we need to change for each habit
-      console.log("goodhabits")
-      console.log(goodHabits)
+      // console.log("goodhabits")
+      // console.log(goodHabits)
 
       goodHabits.map(
         async (habit)=>{
@@ -182,8 +182,8 @@ export async function addGoodHabitsToLogs(id)
           if(updatedErr)
             console.error(updatedErr);
         
-          console.log("updated Data")
-        console.log(updatedData)
+        //   console.log("updated Data")
+        // console.log(updatedData)
         }
 
         
