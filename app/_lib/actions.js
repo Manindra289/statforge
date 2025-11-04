@@ -139,8 +139,8 @@ export async function addGoodHabitsToLogs(id)
         goodHabits ( habitName, category, currentStreak )
         `).eq("date",date).eq("userId",id);
     
-    console.log("data **** ")
-    console.log(data)
+    // console.log("data **** ")
+    // console.log(data)
     
     if(data.length == 0)
     {
@@ -149,10 +149,12 @@ export async function addGoodHabitsToLogs(id)
       const goodHabits = await getGoodHabits(id);
       
       // also check whether streak is being followed or not ?
-      console.log("goodHabits****")
+      // console.log("goodHabits****")
       
       const today = new Date().toISOString().split("T")[0];
       // we need to change for each habit
+      console.log("goodhabits")
+      console.log(goodHabits)
 
       goodHabits.map(
         async (habit)=>{
@@ -177,10 +179,8 @@ export async function addGoodHabitsToLogs(id)
             .eq("habitId", habitId)
             .eq("userId", id)
             .select();
-
           if(updatedErr)
             console.error(updatedErr);
-        
         }
 
         }
@@ -188,16 +188,7 @@ export async function addGoodHabitsToLogs(id)
 
 
       );
-
-
-
-
-
-
-
-
-
-      console.log(goodHabits)
+      // console.log(goodHabits)
       
       // we get habitId, habitName, habitCategory, currentStreak, lastCompleted -- everything
       // const lastCompleted = new Date(goodHabits.lastCompleted)
