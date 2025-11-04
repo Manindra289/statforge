@@ -181,10 +181,12 @@ export async function addGoodHabitsToLogs(id)
             .select();
           if(updatedErr)
             console.error(updatedErr);
+        
+          console.log("updated Data")
+        console.log(updatedData)
         }
 
-        console.log("updated Data")
-        console.log(updatedData)
+        
 
         }
       );
