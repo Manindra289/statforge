@@ -169,7 +169,7 @@ export async function addGoodHabitsToLogs(id)
           // Missed one or more days
           
           const habitId = habit.habitId;
-          newStreak = 1;
+          let newStreak = 1;
           const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
             .update({
               "currentStreak": newStreak,
@@ -187,9 +187,6 @@ export async function addGoodHabitsToLogs(id)
         console.log(updatedData)
 
         }
-
-
-
       );
       // console.log(goodHabits)
       
