@@ -173,8 +173,8 @@ export async function addGoodHabitsToLogs(id)
           const {data: updatedData, error:updatedErr} = await supabase.from("goodHabits")
             .update({
               "currentStreak": newStreak,
-              "lastCompleted": today,
-              "backupLastCompleted": lastCompleted,
+              // "lastCompleted": today,
+              // "backupLastCompleted": lastCompleted,
             })
             .eq("habitId", habitId)
             .eq("userId", id)
