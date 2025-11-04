@@ -183,6 +183,9 @@ export async function addGoodHabitsToLogs(id)
             console.error(updatedErr);
         }
 
+        console.log("updated Data")
+        console.log(updatedData)
+
         }
 
 
