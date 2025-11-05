@@ -94,7 +94,7 @@ function StudyChart({userId,month,year,monthDays}) {
         <div className="w-full h-80 bg-[rgb(0,0,49)]  pb-12 pt-4 pr-4 rounded-3xl my-8  ">
         <h3 className="text-xl font-semibold mb-2 text-white text-center">Monthly Study Data</h3>
         <ResponsiveContainer>
-        <BarChart data={data}  margin={{ left: -30}}  >
+        <BarChart data={data}  margin={{ left: -20}}  >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
         {/* <XAxis dataKey="name" /> */}
         <XAxis dataKey="day"  stroke="white"  />

@@ -92,7 +92,7 @@ function SleepChart({userId,month,year,monthDays}) {
         <div className="w-full h-80 bg-gray-600 pb-12 pt-4 pr-4  rounded-3xl my-8 max-sm:text-sm">
         <h3 className="text-xl font-semibold mb-2 text-white text-center">Monthly Sleep Data</h3>
         <ResponsiveContainer >
-        <BarChart data={data} margin={{ left: -30}}  >
+        <BarChart data={data} margin={{ left: -20}}  >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
         {/* <XAxis dataKey="name" /> */}
         <XAxis dataKey="day"  stroke="#FBFBFD"   />
