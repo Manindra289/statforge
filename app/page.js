@@ -37,7 +37,7 @@ export default async function Page() {
       </div> */}
       </div>
     </main>
-    <footer className="fixed bottom-0 w-full text-center text-sm text-black py-1 border-t">
+    <footer className="fixed bottom-0 w-full text-center text-sm text-black py-1 font-bold">
         Developed by Khandyana Manindra
     </footer>
     </>
