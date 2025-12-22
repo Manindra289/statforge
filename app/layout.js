@@ -18,9 +18,7 @@ export default function RootLayout({ children }) {
           {children}
         </Provider>
       </div>
-      <footer className="fixed bottom-0 w-full text-center text-sm text-gray-500 py-3 bg-white border-t">
-        Developed by Khandyana Manindra
-      </footer>
+      
       </body>
       
     </html>

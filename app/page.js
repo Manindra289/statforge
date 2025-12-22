@@ -37,6 +37,9 @@ export default async function Page() {
       </div> */}
       </div>
     </main>
+    <footer className="fixed bottom-0 w-full text-center text-sm text-black py-1 border-t">
+        Developed by Khandyana Manindra
+    </footer>
     </>
   );
 }
