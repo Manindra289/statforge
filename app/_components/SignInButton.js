@@ -17,10 +17,11 @@ function SignInButton() {
       <span>Continue with Google</span>
     </button>
     </form>
-    
+    <br/>
 
-    <form action={demoSignInAction}>
-      <button className="px-10 py-4 text-lg border rounded-lg font-bold bg-gray-100 hover:bg-gray-200">
+    <form action={demoSignInAction} className="mt-4">
+      <button className="bg-yellow-400 px-8 py-6 text-white-800 text-lg font-semibold rounded-lg
+        hover:bg-yellow-500 transition-all max-sm:text-lg max-sm:px-4 max-sm:py-3 ">
         View Demo
       </button>
     </form>
