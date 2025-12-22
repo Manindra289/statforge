@@ -4,7 +4,7 @@ import { demoSignInAction, signInAction } from "../_lib/actions";
 
 function SignInButton() {
   return (
-    <div className="flex flex-row gap-3">
+    <div className="flex flex-col gap-3">
     <form action={signInAction}>
 
     <button className='flex items-center gap-6 px-10 py-4  text-lg border border-black hover:border-gray-600 rounded-lg font-bold'>
