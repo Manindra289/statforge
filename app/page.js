@@ -37,8 +37,9 @@ export default async function Page() {
       </div> */}
       </div>
     </main>
-    <footer className="fixed bottom-0 w-full text-center text-sm text-black py-1 font-bold">
-        Developed by Khandyana Manindra
+    <footer className="fixed bottom-0 w-full text-center text-sm text-black py-1 font-bold hover:bg-yellow-500 bg-yellow-400">
+        <Link href={"https://www.linkedin.com/in/manindrakhandyana/"}>Developed by Manindra Khandyana</Link>
+        
     </footer>
     </>
   );

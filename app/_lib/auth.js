@@ -4,10 +4,24 @@ import Google from "next-auth/providers/google"
 import { createUser , getUser } from "../_lib/actions";
 
 const authConfig = {
-    providers:[Google({
+    providers:[
+    Google({
         clientId:process.env.AUTH_GOOGLE_ID,
         clientSecret:process.env.AUTH_GOOGLE_SECRET
-    }),],
+    }),
+
+    Credentials({
+      name: "Demo Account",
+      credentials: {},
+      async authorize() {
+        // Fetch demo user from DB
+        const demoUser = await getUser("demouser@gmail.com");
+        return demoUser;
+      },
+    }),
+
+
+],
     callbacks:{
         authorized({auth,request}){
             return !!auth?.user

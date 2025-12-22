@@ -650,3 +650,12 @@ export async function signOutAction()
 {
     await signOut({redirectTo:"/"})
 }
+
+// actions/auth.js
+
+
+export async function demoSignInAction() {
+  await signIn("credentials", {
+    redirectTo: "/dashboard",
+  });
+}
